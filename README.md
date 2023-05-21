@@ -11,10 +11,4 @@ Tecnologias Utilizadas
 Linguagens de Programação: PHP e JavaScript
 Banco de Dados: MySQL
 Framework Web: Bootstrap
-Ferramentas de Desenvolvimento: XAMPP (para ambiente de desenvolvimento local), Git (para controle de versão) e GitHub (para hospedagem do repositório)
-Como Contribuir
-Faça um fork deste repositório.
-Crie uma nova branch com a feature ou correção que deseja implementar (git checkout -b minha-nova-feature).
-Faça o commit das suas alterações (git commit -m 'Adicionando nova feature').
-Faça o push para a branch criada (git push origin minha-nova-feature).
-Abra um Pull Request no GitHub.
+Ferramentas de Desenvolvimento: XAMPP (para ambiente de desenvolvimento local), Git (para controle de versão) e GitHub (para hospedagem do repositório).
