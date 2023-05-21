@@ -1,0 +1,14 @@
+.container {
+    width: 500px;
+}
+
+body {
+    background-color: #F15A25;
+    color: orange;
+}
+
+form{
+    background-color: white;
+    border-radius: 10px;
+}
+
