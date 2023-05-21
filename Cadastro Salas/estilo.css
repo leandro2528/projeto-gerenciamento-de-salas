@@ -12,3 +12,16 @@ form{
     border-radius: 10px;
 }
 
+#header {
+    color: white;
+    margin: 25px;
+}
+
+#hrheader {
+    color: black;
+    margin: 25px;
+}
+
+b {
+    color: white;
+}
