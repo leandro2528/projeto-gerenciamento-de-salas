@@ -1,31 +1,37 @@
 <?php
-    switch($_REQUEST["acao"]) {
-        case "cadastrar_salas":
-            $nome = $_POST["nome"];
-            $capacidade_maxima = $_POST["capacidade_maxima"];
-            $recursos_disponiveis = $_POST["recursos_disponiveis"];
-            $data_criacao = $_POST["data_criacao"];
+    switch ($_REQUEST["acao"]) {
+        case "cadastrar":
+            if (isset($_POST["nome"]) && isset($_POST["capacidade_maxima"]) && isset($_POST["recursos_disponiveis"]) && isset($_POST["data_criacao"])) {
+                $nome = $_POST["nome"];
+                $capacidade_maxima = $_POST["capacidade_maxima"];
+                $recursos_disponiveis = $_POST["recursos_disponiveis"];
+                $data_criacao = $_POST["data_criacao"];
 
-            $sql = "INSERT INTO salas (nome, capacidade_maxima, recursos_disponiveis, data_criacao) VALUES ('{$nome}', '{$capacidade_maxima}', '{$recursos_disponiveis}', '{$data_criacao}')";
+                // Realize as validações necessárias nos dados recebidos, como verificar se estão no formato correto, sanitizar, etc.
 
-            $res = $conn->query($sql);
-            
-            if($res == true) {
-                print "<script>alert('Cadastro realizado com sucesso!');</script>";
-                print "<script>location.href='?page=salas';</script>";
+                $sql = "INSERT INTO sala (nome, capacidade_maxima, recursos_disponiveis, data_criacao) VALUES ('$nome', '$capacidade_maxima', '$recursos_disponiveis', '$data_criacao')";
+
+                $res = $conn->query($sql);
+
+                if ($res) {
+                    // Inserção bem-sucedida
+                    echo "Sala cadastrada com sucesso.";
+                } else {
+                    // Erro na inserção
+                    echo "Ocorreu um erro ao cadastrar a sala: " . mysqli_error($conn);
+                }
             } else {
-                print "<script>alert('Não foi possível cadastrar!');</script>";
-                print "<script>location.href='?page=salas';</script>";
+                // Campos obrigatórios não foram enviados
+                echo "Por favor, preencha todos os campos obrigatórios.";
             }
+            break;
 
-        break;
-
-        case "editar_sala":
+        case "editar":
             // code
-        break;
+            break;
 
-        case "excluir_sala":
+        case "excluir":
             // code
-        break;
+            break;
     }
 ?>

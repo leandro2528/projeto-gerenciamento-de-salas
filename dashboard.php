@@ -108,6 +108,13 @@
                         case "salas";
                             include("salas.php");
                         break;
+                        case "salvar_sala";
+                            include("salvar_sala.php");
+                        break;
+                        
+
+
+
                         case "eventos";
                             include("eventos.php");
                         break;
@@ -120,9 +127,7 @@
                         case "participantes";
                             include("participantes.php");
                         break;
-                        case "salvar_sala";
-                            include("salvar_sala.php");
-                        break;
+                       
                     }
                 ?>
             </div>
