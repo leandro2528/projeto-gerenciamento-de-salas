@@ -2,7 +2,7 @@
     define('HOST', 'localhost');
     define('USER', 'root');
     define('PASS', '');
-    define('BASE', 'gerenciamento_salas_eventos');
+    define('BASE', 'gerenciamento_salas');
 
-    $conn = new MySQLi(HOST, USER, PASS, BASE);
+    $conn = new mysqli(HOST, USER, PASS, BASE);
 ?>
