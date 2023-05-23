@@ -13,7 +13,39 @@
 
     <h5 id="title-client">Salas /<a href="?dashboard.php">Dashboard</a></h5>
     <div id="new-table-client">
-   
+        <?php
+            $sql = "SELECT * FROM sala";
+
+            $res = $conn->query($sql);
+
+            $qtd = $res->num_rows;
+
+            if($qtd > 0){
+                print "<table class='table table-hover table-striped table-bordered'>";
+                    print "<tr>";
+                        print "<th>Nome</th>";
+                        print "<th>Capacidade Maxima</th>";
+                        print "<th>Recursos Disponíveis</th>";
+                        print "<th>Data de Criação</th>";
+                        print "<th>Ações</th>";
+                    print "</tr>";
+                while($row = $res->fetch_object()) {
+                    print "<tr>";
+                        print "<td>".$row->nome."</td>";
+                        print "<td>".$row->capacidade_maxima."</td>";
+                        print "<td>".$row->recursos_disponiveis."</td>";
+                        print "<td>".$row->data_criacao."</td>";
+                        print "<td>
+                                    <button class='btn btn-warning btn-sm'>Editar</button>
+                                    <button class='btn btn-danger btn-sm'>Excluir</button>
+                              </td>";
+                    print "<tr>";
+                }
+                print "</table>";
+            } else {
+                print "<p class='alert alert-danger'> Não encontrou resultados</p>";
+            }
+        ?>
     </div>
     <div id="form-new-client">
         <form action="?page=salvar_sala" method="POST" class="form-boxs-clients">
@@ -56,6 +88,7 @@
     </div>
 
 </div>
+
 
     <script src="assets/js/salas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
