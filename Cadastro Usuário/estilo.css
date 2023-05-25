@@ -17,7 +17,7 @@ body {
 
 .elemento::before {
   content: "";
-  background-image: url('Lampa\ light\ mode.png');
+  background-image: url('Images/Lampa\ light\ mode.png');
   opacity: 0.3;
   position: absolute;
   top: 0;
@@ -31,7 +31,7 @@ body {
 
 .elementoDark::before {
   content: "";
-  background-image: url('Padrão\ dark\ mode.png');
+  background-image: url('Images/Padrão\ dark\ mode.png');
   opacity: 0.3;
   position: absolute;
   top: 0;
